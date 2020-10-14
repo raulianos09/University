@@ -1,0 +1,21 @@
+2.
+
+A) Substitute the i-th elem from a list, with a value v;
+
+substitute(L1L2L3...Ln, v , i) =
+{
+	[], n=0
+	L1 U substitute(L2L3...Ln, v, i-1), i>1
+	V U L2L3...Ln, i == 1
+}
+
+B)Determine difference of two sets represented as lists.
+
+dfference(L1L2...Ln, l1l2...lm)
+{
+	[],n=0
+	[],m=0
+	L1 U difference(L2L3...Ln , l1l2...lm),L1 not in l1l2...lm
+	difference(L2L3...Ln,l1l2...lm), otherwise
+
+}
