@@ -1,0 +1,14 @@
+alternate_sum([],0,0).
+
+alternate_sum([],1,0).
+
+alternate_sum([Head|Tail],Even,TotalSum):-
+    Even == 0,
+    alternate_sum(Tail,1,Sum),
+    TotalSum is Head+Sum.
+
+alternate_sum([Head|Tail],Even,TotalSum):-
+    Even == 1,
+    alternate_sum(Tail,0,Sum),
+    TotalSum is Sum-Head.
+
