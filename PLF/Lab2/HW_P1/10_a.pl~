@@ -1,4 +1,0 @@
-valley([],true,Elem).
-
-valley([Head|Tail], Lesser, Elem):-
-
