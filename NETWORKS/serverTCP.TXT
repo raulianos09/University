@@ -1,0 +1,133 @@
+//The client send to the server two sorted array of chars. The server will merge sort the two arrays and return the result to the client.
+//193.226.40.130 
+#include <sys/types.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <sys/socket.h>
+#include <stdlib.h>
+#include <netinet/in.h>
+#include <string.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+const int VALIDATION_ERROR = 1;
+
+int validate_number (char *str)
+{
+  	while (*str)
+    	{
+      		if (!isdigit (*str))
+		{			//if the character is not a number, return
+		  	return 0;
+		}
+      		str++;			//point to next character
+    	}
+  	return 1;
+}
+
+int validate(int argc, char** argv)
+{
+    if (argc < 2)
+    	{
+      		printf ("Give me a port.\n");
+      		return 1;
+    	}
+  	if (!validate_number (argv[1]))
+    	{
+      		printf ("Port must be integer.\n");
+      		return 2;
+    	}
+    return 0;
+}
+
+int connectWithClient(struct sockaddr_in *server_addr, char** argv)
+{
+      	int server_fd;
+        if ((server_fd = socket (AF_INET, SOCK_STREAM, 0)) == 0)
+    	{
+      		perror ("Socket creation failed\n");
+      		exit (EXIT_FAILURE);
+    	}
+
+  	(*server_addr).sin_family = AF_INET;
+  	(*server_addr).sin_addr.s_addr = INADDR_ANY;
+  	//Seting socket to listen on all available ip addresses
+    //Setting bind port
+  	(*server_addr).sin_port = atoi (argv[1]);
+  	
+  	//Binding server
+  	if (bind (server_fd, (struct sockaddr *) server_addr, sizeof (*server_addr)) < 0)
+    	{
+      		perror ("Bind error.\n");
+      		exit (EXIT_FAILURE);
+    	}
+  	
+    printf ("Listening.\n");
+  	//Listening for incoming connections
+  	if (listen (server_fd, 3) < 0)
+    	{
+      		perror ("Listen error.\n");
+      		exit (EXIT_FAILURE);
+    	}
+    
+    return server_fd;
+}
+
+void handleClient(int client)
+{
+    
+	int s;
+	/* TO DO ...
+        hints:
+            + s = send(client, buff, size, 0);
+            + s = recv(client, buff, size, MSG_WAITALL)
+    */
+            
+}
+
+int main (int argc, char **argv)
+{
+	//Validating cmd arguments
+  	if(validate(argc, argv) != 0)
+    {
+          return VALIDATION_ERROR;
+    }
+    
+  	//Initializing socket
+  	struct sockaddr_in server_addr;
+    int addrlen = sizeof (server_addr);
+    int server_fd = connectWithClient(&server_addr, argv);
+  	
+  	while (1)
+    	{
+      		struct sockaddr_in client_addr;
+      		printf ("Server waiting for clients.\n");
+      		//Client has just connected
+      		int client = accept (server_fd, (struct sockaddr *) &client_addr,
+			   (socklen_t *) & addrlen);
+      		//Creating child proccess in order to "serve" the curent client
+      		if (!fork ())
+		    {
+	  		//Checking if the client connection works
+	  		if (!client)
+	    		{
+	      			perror ("Accept error.\n");
+	      			exit (EXIT_FAILURE);
+	    		}
+	  		printf ("New client connected: %s:%d.\n",
+		  	inet_ntoa (client_addr.sin_addr), client_addr.sin_port);
+	  		
+
+            // HANDLE THE CLIENT REQUEST HERE
+            handleClient(client);
+	  		
+
+            close (client);
+		    }   
+		
+		
+        }
+  	wait (0);
+  	return 0;
+}
