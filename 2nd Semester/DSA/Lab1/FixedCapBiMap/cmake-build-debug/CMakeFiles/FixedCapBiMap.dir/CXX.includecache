@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Headers/ExtendedTest.h
+
+../Headers/FixedCapBiMap.h
+utility
+-
+
+../Headers/FixedCapBiMapIterator.h
+FixedCapBiMap.h
+../Headers/FixedCapBiMap.h
+
+../Headers/ShortTest.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/App.cpp
+Headers/ExtendedTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/ExtendedTest.h
+Headers/ShortTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/ShortTest.h
+Headers/FixedCapBiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMap.h
+iostream
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/ExtendedTest.cpp
+Headers/ExtendedTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/ExtendedTest.h
+Headers/FixedCapBiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMap.h
+Headers/FixedCapBiMapIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMapIterator.h
+assert.h
+-
+iostream
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/FixedCapBiMap.cpp
+Headers/FixedCapBiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMap.h
+Headers/FixedCapBiMapIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMapIterator.h
+exception
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/FixedCapBiMapIterator.cpp
+Headers/FixedCapBiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMap.h
+Headers/FixedCapBiMapIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMapIterator.h
+exception
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/ShortTest.cpp
+Headers/ShortTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/ShortTest.h
+assert.h
+-
+Headers/FixedCapBiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMap.h
+Headers/FixedCapBiMapIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab1/FixedCapBiMap/Source Files/Headers/FixedCapBiMapIterator.h
+utility
+-
+
