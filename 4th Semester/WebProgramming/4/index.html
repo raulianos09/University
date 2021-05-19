@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Doggo album </title>
+        <link rel="icon" href="resources/DoggoIcon.ico">
+
+        <script type="text/javascript">
+            function loadPictures() {
+                var cell;
+                for(i = 1; i <= 8; i++) {
+                    cell = document.getElementById(i);
+                    if (cell) {
+                        img = document.createElement("img");
+                        img.setAttribute("src", "resources/image-" + i + ".jpg");
+                        cell.appendChild(img);
+                    }
+                }
+            }
+
+            function loadOriginalSize(id) {
+                clearContainer();
+                var cell = document.getElementById("original_size_container");
+                img = document.createElement("img");
+                img.setAttribute("src", "resources/image-" + id + ".jpg");
+                cell.appendChild(img);
+            }
+
+            function clearContainer() {
+                document.getElementById("original_size_container").innerHTML = "";
+            }
+        </script>
+
+        <style type="text/css">
+
+            .thumbnails {
+                margin-top: 1%;
+                text-align: center;
+            }
+
+            .thumbnails td {
+                border: 3px;
+                padding: 20px;
+            }
+
+            .thumbnails table {
+                border-collapse: separate;
+                border-spacing: 1px;
+            }
+
+            .thumbnails img {
+                border-radius: 100%;
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+            }
+            .original_size{
+
+            }
+            .original_size img{
+                width: 100%;
+                height: 700px;
+                object-fit: scale-down;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+
+    <body onload="loadPictures()">
+
+        <div class="thumbnails">
+            <table style="margin-left: auto;margin-right: auto">
+                <tr>
+                    <td id="1" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="2" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="3" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="4" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="5" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="6" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="7" onmouseenter="loadOriginalSize(id)"> </td>
+                    <td id="8" onmouseenter="loadOriginalSize(id)"> </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="original_size_container" class="original_size"> </div>
+    </body>
+</html>

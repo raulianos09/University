@@ -1,0 +1,239 @@
+body{
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    position: center;
+    align-content: center;
+    margin: 0;
+}
+
+#pageContent{
+    background-color: white;
+    height: auto;
+    width: 85%;
+    margin-left: 16.45%;
+    position: absolute;
+}
+.pageHeader{
+    background-color: white;
+    position: fixed;
+    display: inline;
+    padding-top: 22px;
+    padding-bottom: 12px;
+}
+.pageLogo img{
+    height: 58px;
+    width: 205px;
+    float: left;
+}
+.searchBar{
+    width: 595px;
+    height: 44px;
+    margin-left: 240px;
+    border: 1px solid #b0b0b0 ;
+    border-radius: 2px;
+    background-color: white;
+    overflow: hidden;
+}
+.searchButton{
+    background-color: #2b64f7;
+    width: 90px;
+    height: 46px;
+    margin-top: -46px;
+    margin-left: 797px;
+    border-radius: 3px 3px 3px 3px;
+}
+.searchButton svg{
+    margin-left: 33px;
+    margin-top: 11px;
+}
+
+
+.user{
+    height: 45px;
+    width: 105px;
+    margin-top: -45px;
+    overflow: hidden;
+    float: right;
+    margin-right: -280px;
+    display: flex;
+    align-items: center;
+}
+.user img{
+    border-radius: 45%;
+    width: 34px;
+    height: 34px;
+}
+.user p {
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 7px;
+    padding-bottom: 2px;
+    color: #6001D2;
+}
+
+.mail{
+    margin-top: -44px;
+    margin-right: -351px;
+    float: right;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.mail svg{
+    width: 30px;
+    height: 30px;
+}
+.mail p{
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 8px;
+    color: #6001D2;
+}
+
+.navigation{
+    padding-top: 80px;
+    margin-left: 8px;
+    display: flex;
+    position: fixed;
+
+}
+.navigation svg{
+    width: 28px;
+    height: 28px;
+    padding-right: 6px;
+    padding-top: 9px;
+}
+.navigation p {
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 38px;
+    color: #6001D2;
+    white-space: nowrap;
+}
+
+.bilboard{
+    width: 1260px;
+    height: 72px;
+    position: fixed;
+    background-image: linear-gradient(to right,#2b64f7,#4e01ca);
+    margin-top:137px;
+    margin-left: 6px;
+    display: flex;
+}
+.bilboard img{
+    margin-left: 104px;
+}
+.bilboardLine{
+    margin-left: 20px;
+}
+.bilboardTitle{
+    margin-top: 6px;
+    margin-left: 12px;
+    font-size: 19px;
+    font-weight: 700;
+    padding-left: 8px;
+    color: #fff;
+    white-space: nowrap;
+}
+.bilboardDescription{
+    margin-top: 6px;
+    margin-left: 18px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.content{
+    position: fixed;
+    display: flex;
+}
+
+.newsSide{
+    display: flex;
+    margin-top: 227px;
+    margin-left: 6px;
+    width: 880px;
+
+}
+.news{
+    display: flex;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+.news img{
+    border-radius: 10px;
+    width: 220px;
+    height: 123px;
+    margin-right: 25px;
+}
+.newsText{
+    display: inline-block;
+}
+.newsTags{
+    display: inline-block;
+}
+.newsDescription{
+    font-size: 19px;
+    background-color: transparent;
+    color: #020e65;
+    display:block;
+    margin-bottom: 4px;
+    font-weight: 700;
+
+}
+.longNewsDescription{
+    max-height: 38px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    color: #2a2a2a;
+    line-height: 18px;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.weather{
+    margin-left: 59px;
+    margin-top:231px ;
+}
+.weatherTitle{
+    text-align: start;
+    color: #000;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 700;
+}
+.prognosticList{
+    display: flex;
+}
+.prognostic{
+    display: block;
+    padding-right:57px ;
+}
+
+.prognostic img{
+    width: 26px;
+    height: 19px;
+    margin-bottom: 6px;
+}
+.prognostic_degrees{
+    display: flex;
+}
+.advertise{
+    margin-top: 10px;
+}
+.support{
+
+    display: inline-block;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    list-style-type: none;
+    line-height: 22px;
+    font-size: 13px;
+    background-color: transparent;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #6e7780;
+}

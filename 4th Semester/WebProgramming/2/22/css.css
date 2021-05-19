@@ -1,0 +1,13 @@
+div {
+    width:100px;
+    height:100px;
+    background:blue;
+    transition:2s;
+    position:absolute;
+    right:calc(100% - 100px);
+
+}
+div:hover {
+    right:0;
+    transform: rotate(360deg);
+}
