@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <title>Add Publishing House</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#submitButton').click(function () {
+                var houseName = $("#houseName").val();
+                var houseURL = $("#houseURL").val();
+
+
+                if (houseName != '' && houseURL != '')
+                {
+                    $.ajax({
+                        url: "add-publishingHouse.php",
+                        type: "POST",
+                        data: { houseName:houseName , houseURL:houseURL},
+                        success:function (result) {
+                            window.location.href = "add-publishingHouse.html";
+                            alert(result);
+                        }
+                    })
+                }
+                else{
+                    alert("Complete the required fields!");
+                }
+            });
+        });
+
+
+    </script>
+
+    <style type="text/css">
+
+        body{
+            background-image: url("background-photo.jpg");
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+        }
+
+        label{
+            font-size: 25px;
+            color:white;
+            font-weight: bold;
+        }
+
+        div.settings {
+            display:grid;
+            justify-content: center;
+            grid-template-columns: max-content max-content;
+            grid-gap:5px;
+        }
+
+        .container{
+            margin-top: 20%;
+            position: center;
+            justify-content: center;
+        }
+
+        p{
+            text-align: center;
+            font-size: 50px;
+            color:white;
+            font-weight: bold;
+        }
+
+        .submit{
+            margin: auto;
+            margin-top: 10px;
+            width: 200px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            background-color: grey;
+            color: white;
+        }
+        h1{
+            position: absolute;
+            top: 0%;
+            right: 50%;
+            transform: translate(50%,-50%);
+            text-transform: uppercase;
+            font-family: verdana;
+            font-size: 5em;
+            font-weight: 700;
+            color: grey;
+            text-shadow: 1px 1px 1px #919191,
+            1px 2px 1px dimgrey,
+            1px 3px 1px dimgrey,
+            1px 4px 1px dimgrey,
+            1px 5px 1px dimgrey,
+            1px 6px 1px dimgrey,
+            1px 7px 1px dimgrey,
+            1px 8px 1px dimgrey,
+            1px 9px 1px dimgrey,
+            1px 10px 1px dimgrey,
+            1px 18px 6px rgba(16,16,16,0.8),
+            1px 22px 10px rgba(16,16,16,0.6),
+            1px 25px 35px rgba(16,16,16,0.6),
+            1px 30px 60px rgba(16,16,16,0.8);
+        }
+
+    </style>
+</head>
+
+
+<body>
+<h1>Exam</h1>
+<br>
+<br>
+<div class="container">
+    <p>Add new Publishing House</p>
+    <div class="settings">
+        <label>Name</label>
+        <input type="text" id="houseName" name="houseName">
+        <label>URL</label>
+        <input type="text" id="houseURL" name="houseURL">
+    </div>
+
+    <input type="submit" class="submit" value="Add" id="submitButton">
+</div>
+</body>
+
+
+</html>
