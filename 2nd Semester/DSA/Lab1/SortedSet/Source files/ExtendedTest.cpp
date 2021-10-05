@@ -148,6 +148,20 @@ void testAdd() {
 	assert(s.size() == 20000);
 }
 
+void testIsSubset(Relation r){
+    cout << "Test isSubset" << "\n";
+    SortedSet s1(r);
+    SortedSet s2(r);
+    for(int i = 1 ; i<100 ; i++)
+        s1.add(i);
+    s2.add(5);
+    s2.add(19);
+    s2.add(3);
+    s2.add(87);
+    assert(s2.isSubsetOf(s1) == true);
+    s2.add(109);
+    assert(s2.isSubsetOf(s1) == false);
+}
 
 void testRemove(Relation r) {
 	cout << "Test remove" << endl;
@@ -323,6 +337,7 @@ void testAllExtended() {
 	testIterator(rGreater);
 	testQuantity(rLessEqual);
 	testQuantity(rGreater);
+	testIsSubset(rLessEqual);
 
 }
 

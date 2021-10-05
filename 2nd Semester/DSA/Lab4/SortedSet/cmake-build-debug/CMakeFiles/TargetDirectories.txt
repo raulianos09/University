@@ -1,0 +1,3 @@
+C:/Users/raul_/Desktop/DSA-LABS/Lab4/SortedSet/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/raul_/Desktop/DSA-LABS/Lab4/SortedSet/cmake-build-debug/CMakeFiles/SortedSet.dir
+C:/Users/raul_/Desktop/DSA-LABS/Lab4/SortedSet/cmake-build-debug/CMakeFiles/rebuild_cache.dir

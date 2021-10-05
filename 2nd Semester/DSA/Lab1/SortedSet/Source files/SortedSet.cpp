@@ -113,6 +113,26 @@ void SortedSet::resize() {
     this->elements = NewArray;
 }
 
+//Best Case: Theta(this.size())
+//Worst Case: Theta(s.size())
+//Total Complexity: O(s.size())
+bool SortedSet::isSubsetOf(SortedSet &s) {
+    int i = 0;
+    int j = 0;
+    while( i < this->size() && j < s.size())
+    {
+        if(this->elements[i] > s.elements[j]){
+            j++;
+        }
+        else
+            if(this->elements[i] == s.elements[j])
+                i++;
+    }
+    if(i == this->size())
+        return true;
+    return false;
+}
+
 
 
 

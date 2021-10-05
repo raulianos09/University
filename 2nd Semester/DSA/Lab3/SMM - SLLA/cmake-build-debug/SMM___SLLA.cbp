@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SMM___SLLA"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SMM___SLLA">
+				<Option output="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug/SMM___SLLA.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/."/>
+					<Add directory="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers"/>
+					<Add directory="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.26.28801\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.26.28801\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 SMM___SLLA"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SMM___SLLA/fast">
+				<Option output="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug/SMM___SLLA.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/."/>
+					<Add directory="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers"/>
+					<Add directory="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.26.28801\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.26.28801\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 SMM___SLLA/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/App.cpp">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/ExtendedTest.h">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SMMIterator.h">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/ShortTest.h">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SortedMultiMap.h">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/ValueIterator.h">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files/ExtendedTest.cpp">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files/SMMIterator.cpp">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files/ShortTest.cpp">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files/SortedMultiMap.cpp">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files/ValueIterator.cpp">
+			<Option target="SMM___SLLA"/>
+		</Unit>
+		<Unit filename="C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

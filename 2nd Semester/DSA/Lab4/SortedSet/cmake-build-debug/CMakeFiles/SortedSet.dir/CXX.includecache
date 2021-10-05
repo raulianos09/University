@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Headers/SortedSet.h
+
+../Headers/SortedSetIterator.h
+SortedSet.h
+../Headers/SortedSet.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab4/SortedSet/Source Files/SortedSet.cpp
+SortedSet.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab4/SortedSet/Source Files/SortedSet.h
+SortedSetIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab4/SortedSet/Source Files/SortedSetIterator.h
+iostream
+-
+

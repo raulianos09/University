@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SMMIterator.h
+SortedMultiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SortedMultiMap.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SortedMultiMap.h
+vector
+-
+utility
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/ValueIterator.h
+SortedMultiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SortedMultiMap.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Source Files/ShortTest.cpp
+assert.h
+-
+../Headers/SortedMultiMap.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SortedMultiMap.h
+../Headers/SMMIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/SMMIterator.h
+../Headers/ValueIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/Headers/ValueIterator.h
+exception
+-
+vector
+-
+iostream
+-
+

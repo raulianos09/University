@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Headers/Bag.h
+
+../Headers/BagIterator.h
+Bag.h
+../Headers/Bag.h
+
+../Headers/ExtendedTest.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab2/Bag/Source Files/ExtendedTest.cpp
+assert.h
+-
+Headers/Bag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab2/Bag/Source Files/Headers/Bag.h
+Headers/ExtendedTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab2/Bag/Source Files/Headers/ExtendedTest.h
+Headers/BagIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab2/Bag/Source Files/Headers/BagIterator.h
+iostream
+-
+vector
+-
+exception
+-
+

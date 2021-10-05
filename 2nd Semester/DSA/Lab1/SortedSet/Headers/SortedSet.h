@@ -42,6 +42,10 @@ public:
 	//checks if the sorted set is empty
 	bool isEmpty() const;
 
+	//checks if the current set (this) is a subset of s (the set received as parameter)
+	//Obs. Assume that the two sortedSets use the same relation.
+	bool isSubsetOf(SortedSet& s);
+
 	//returns an iterator for the sorted set
 	SortedSetIterator iterator() const;
 

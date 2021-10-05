@@ -1,0 +1,4 @@
+"D:\Programe\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Users\raul_\Desktop\DSA-LABS\Lab3\SMM - SLLA"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/raul_/Desktop/DSA-LABS/Lab3/SMM - SLLA/cmake-build-debug

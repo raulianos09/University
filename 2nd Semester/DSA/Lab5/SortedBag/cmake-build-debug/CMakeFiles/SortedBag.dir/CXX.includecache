@@ -1,0 +1,74 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/App.cpp
+Headers/SortedBag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+Headers/SortedBagIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBagIterator.h
+iostream
+-
+Headers/ShortTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/ShortTest.h
+Headers/ExtendedTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/ExtendedTest.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/ExtendedTest.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/ShortTest.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBagIterator.h
+SortedBag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+stack
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Source Files/ExtendedTest.cpp
+../Headers/ShortTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/ShortTest.h
+../Headers/SortedBag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+../Headers/SortedBagIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBagIterator.h
+assert.h
+-
+iostream
+-
+exception
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Source Files/ShortTest.cpp
+../Headers/ShortTest.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/ShortTest.h
+../Headers/SortedBag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+../Headers/SortedBagIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBagIterator.h
+assert.h
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Source Files/SortedBag.cpp
+../Headers/SortedBag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+../Headers/SortedBagIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBagIterator.h
+stack
+-
+iostream
+-
+
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Source Files/SortedBagIterator.cpp
+../Headers/SortedBagIterator.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBagIterator.h
+../Headers/SortedBag.h
+C:/Users/raul_/Desktop/DSA-LABS/Lab5/SortedBag/Headers/SortedBag.h
+exception
+-
+
