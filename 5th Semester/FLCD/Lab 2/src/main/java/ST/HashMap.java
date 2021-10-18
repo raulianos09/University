@@ -18,7 +18,7 @@ public class HashMap<Val>{
 
     static private int hashFunction(String token)
     {
-        return token.chars().sum();
+        return token.chars().sum() % m;
     }
 
     public Pair<Integer, Integer> add(String token, Val value)
