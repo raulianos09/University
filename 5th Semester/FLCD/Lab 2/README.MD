@@ -1,4 +1,4 @@
-#  Laboratory work for second Formal Languages and Compiler Design (lab 2)
+#  Laboratory work for Formal Languages and Compiler Design (lab 2)
 
 ## Assignment statement
 
