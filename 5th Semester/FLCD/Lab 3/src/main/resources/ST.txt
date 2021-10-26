@@ -1,0 +1,6 @@
+SymbolTable
+token             value
+a ---------- null
+b ---------- null
+c ---------- null
+minimum ---------- null

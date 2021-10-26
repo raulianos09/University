@@ -1,0 +1,10 @@
+let int n;
+let int a<n>;
+let int i := 1;
+let minimum = a[0];
+read(n);
+read(a<n>);
+iterate(element : a)
+check(element < minimum )
+minimum := element;
+save(minimum);
