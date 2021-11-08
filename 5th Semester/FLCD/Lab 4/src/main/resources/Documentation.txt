@@ -1,0 +1,31 @@
+
+
+FA is the class that solves the proposed problem for Lab4.
+FA(): creates a new finiteAutomata using the information provided in the "FA.in" file.
+readFA(): utility function that is called in the FA constructor in order to read the FA from file.
+printStates(): prints all the states of the FA.
+printAlphabet(): prints the alphabet of the FA.
+printTransitions(): prints all the transitions of the FA.
+printFinalStates(): prints the final states of the FA.
+printInitialState(): prints the initial state of the FA.
+verifyDFA(): checks if a given sequence is accepted by the FA.
+
+Structure of the "FA.in" file:
+file =  states
+        alphabet
+        numberOfTransitions
+        transitions
+        initialState
+        finalStates
+
+states = {letter } //any number of letters, all letters must be followed by a space; represents the states of the FA
+alphabet = {letter } //any number of letters, all letters must be followed by a space; represents the alphabet of the FA
+numberOfTransitions = number
+transitions = {letter letter letter} // truple of letters representing: FromState - transitionValue - ToState
+initialState = letter
+finalStates = {letter } // any number of letters, all letters must be followed by a space; representing the set of final states of the FA
+
+letter =  "A"| ... |"Z"|"a"|...|"z"
+number = nonZeroDigit{digit}
+nonZeroDigit = "1"|...|"9"
+digit = "0"|...|"9"

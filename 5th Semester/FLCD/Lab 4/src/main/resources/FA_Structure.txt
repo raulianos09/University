@@ -1,0 +1,7 @@
+The input file "FA.in" has the following structure:
+s1 s2 s3 ... sn -> states
+a1 a2 a3 ... an -> alphabet
+n -> number of transitions
+a b c -> transition from state a to state b is equal to c
+a -> initial state
+a1 a2 a3 ... an -> final states

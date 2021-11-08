@@ -7,7 +7,7 @@ from torchvision.transforms import transforms
 from exampleCV import SimpleNet
 
 ann = SimpleNet()
-ann.load_state_dict(torch.load("model_10.model"))
+ann.load_state_dict(torch.load("best_model.model"))
 ann.eval()
 
 for file in os.listdir("UserTest"):
