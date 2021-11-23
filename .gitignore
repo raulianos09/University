@@ -54,6 +54,12 @@ Thumbs.db
 .svn/
 CVS
 
+.idea
+node_modules/**/*
+package-lock.json
+build
+
+
 # XCode 4 #
 ###########
 *.xcuserstate
