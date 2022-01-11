@@ -12,18 +12,21 @@ import java.util.stream.Collectors;
 public class GraphMPI {
 
     private int numberOfEdges;
-
-    public int getNumberOfVertices() {
-        return numberOfVertices;
-    }
-
     private int numberOfVertices;
 
     private Set<Integer> colors;
     private Map<GNode, Set<GNode>> graph;
 
+    public int getNumberOfEdges() {
+        return numberOfEdges;
+    }
+
+    public int getNumberOfVertices() {
+        return numberOfVertices;
+    }
+
     public Set<Integer> getIndependentSet() {
-        return independentSet.stream().map(n->n.getNodeID()).collect(Collectors.toSet());
+        return independentSet.stream().map(n -> n.getNodeID()).collect(Collectors.toSet());
     }
 
     private final Set<GNode> independentSet;
@@ -47,24 +50,53 @@ public class GraphMPI {
         executorService = Executors.newFixedThreadPool(8);
     }
 
-    public void setColor(GNode node) {
-        Set<GNode> neighbours = this.graph.get(node);
-        Set<Integer> colors = neighbours.stream().map(n -> n.getColor()).collect(Collectors.toSet());
-        int maxColor = Collections.max(colors) + 1;
-        for (int i = 0; i <= maxColor; i++)
-            if (!colors.contains(i))
-                node.setColor(i);
+    public Set<GNode> getNeighbours(GNode node) {
+        return this.graph.get(node);
     }
 
-    public List<Integer> toMatrix() {
-        List<Integer> matrix = new ArrayList<>();
+    public void setColor(int node, int color) {
+        for(GNode n : graph.keySet()) {
+            if(n.getNodeID() == node)
+                n.setColor(color);
+        }
+    }
+
+    public int[] getWeights() {
+        int[] weights = new int[numberOfVertices];
+        for (GNode node : graph.keySet())
+            weights[node.getNodeID()] = node.getWeight();
+        return weights;
+    }
+
+    public int[] getColors() {
+        int[] colors = new int[numberOfVertices];
+        for(GNode node : graph.keySet())
+            colors[node.getNodeID()] = node.getColor();
+        return colors;
+    }
+
+    public void setColors(int[] colors) {
+        for(GNode node : graph.keySet())
+            node.setColor(colors[node.getNodeID()]);
+    }
+
+    public int getMaxColor() {
+        int max = 0;
+        for (GNode node : graph.keySet())
+            if (graph.get(node).size() > max)
+                max = graph.get(node).size();
+        return max + 1;
+    }
+
+    public int[][] toMatrix() {
+        int[][] matrix = new int[numberOfVertices][numberOfVertices];
         for (int i = 0; i < numberOfVertices; i++)
             for (int j = 0; j < numberOfVertices; j++)
-                matrix.add(0);
+                matrix[i][j] = 0;
 
         for (GNode node : graph.keySet())
             for (GNode neighbour : graph.get(node)) {
-                matrix.set(node.getNodeID()*numberOfVertices + neighbour.getNodeID(),1);
+                matrix[node.getNodeID()][neighbour.getNodeID()] = 1;
             }
         return matrix;
     }
@@ -97,11 +129,13 @@ public class GraphMPI {
         graph.setAttribute("ui.stylesheet", "node {size: 30px;}");
         graph.setAttribute("ui.antialias");
         for (GNode node : this.graph.keySet()) {
-            Node n = graph.addNode(Integer.toString(node.getNodeID()));
-            n.setAttribute("ui.style", "fill-color:" + colors.get(node.getColor() % colors.size()) + "; text-size: 20px;");
-            n.setAttribute("ui.size", "3gu");
-            n.setAttribute("ui.label", Integer.toString(node.getNodeID()));
-            n.setAttribute("ui.class", "big");
+            if(node.getColor() != -1) {
+                Node n = graph.addNode(Integer.toString(node.getNodeID()));
+                n.setAttribute("ui.style", "fill-color:" + colors.get(node.getColor() % colors.size()) + "; text-size: 20px;");
+                n.setAttribute("ui.size", "3gu");
+                n.setAttribute("ui.label", Integer.toString(node.getNodeID()));
+                n.setAttribute("ui.class", "big");
+            }
         }
         for (GNode node : this.graph.keySet()) {
             for (GNode node2 : this.graph.get(node)) {
