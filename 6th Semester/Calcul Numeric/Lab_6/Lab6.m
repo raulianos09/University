@@ -12,8 +12,8 @@ values = f(nodes);
 %% ---- A ----
 printf("- A) -\n");
 printf("The value of the function at x = pi/4 is: %d\n" , f(pi/4));
-printf("The value of the cubic natural spline at x = pi/4 is: %d\n" , spline(nodes,values, pi/4));
-printf("The value of the cubic clamped spline at x = pi/4 is: %d\n" , spline(nodes,[0 values 0], pi/4));
+printf("The value of the cubic natural spline at x = pi/4 is: %d\n" , spline(nodes,[0 values 0], pi/4));
+printf("The value of the cubic clamped spline at x = pi/4 is: %d\n" , spline(nodes,[1 values 1], pi/4));
 printf("\n\n");
 
 
@@ -24,8 +24,8 @@ figure(1);
 hold on;
 x = 0:0.1:(2*pi);
 plot(x, f(x), "r;Actual Function;");
-plot(x, spline(nodes,values, x), "g;Cubic Natural Spline;");
-plot(x, spline(nodes,[0 values 0], x), "b;Cubic Clamped Spline;");
+plot(x, spline(nodes,[0 values 0], x), "g;Cubic Natural Spline;");
+plot(x, spline(nodes,[1 values 1], x), "b;Cubic Clamped Spline;");
 legend('show');
 hold off;
 printf("View figure 1 for results!");
@@ -51,7 +51,7 @@ step = x(1) : 0.01 : x(length(x));
 
 hold on;
 plot(x,y,"b*;Random points;");
-plot(step,spline(x,y,step),"r;Cubic natural spline;");
+plot(step,spline(x', [ 0 y' 0],step),"r;Cubic natural spline;");
 legend('show');
 hold off;
 
@@ -69,7 +69,9 @@ time = [0 3 5 8 13];
 distance = [0 225 383 623 993];
 speed = [75 77 80 74 72];
 
-printf("The predicted position of the car at t = 10s is: %d\n" , spline(time, distance, 10));
-
+cubicSpline = spline(time, [75 distance 72]);
+cubicSplineDer = fnder(cubicSpline);
+printf("The predicted position of the car at t = 10s is: %d\n" , ppval(cubicSpline, 10));
+printf("The predicted speed of the car at t = 10s is: %d\n" , ppval(cubicSplineDer,10));
 
 printf("\n\n");

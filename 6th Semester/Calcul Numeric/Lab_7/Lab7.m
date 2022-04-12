@@ -96,5 +96,5 @@ plot(x,y, "kx;Selected points;");
 plot(step, polyval(p,step), "r;P (polynomial of degree 2);");
 legend("show");
 hold off;
-
+printf("View figure 3 for results!");
 printf("\n\n");
