@@ -8,7 +8,7 @@ time = [0 3 5 8 13];
 distance = [0 225 383 623 993];
 speed = [75 77 80 74 72];
 
-res = hermite(time,distance,speed,10)
+res = hermite(time,distance,speed,10);
 printf("The distance computed using hermite interpolation is: %d\n" ,res);
 printf("The speed computed using hermite interpolation is: %d\n" ,res);
 printf("\n\n");
@@ -48,7 +48,7 @@ xx = linspace(-5,5,15);
 
 hold on;
 plot(x, f(x), "r;'Actual Function';")
-plot(xx, hermite(x,f(x),dx(x),xx),"b*;'Interpolated Points';");
+plot(xx, hermite(x,f(x),dx(x),xx),"b;'Hermite Poly';");
 legend("show");
 hold off;
 
