@@ -44,10 +44,10 @@ pressure = [0.0061 0.0123 0.0234 0.0424 0.0738 0.1992 0.4736 1.0133];
 %% ---- A ----
 printf("- A) -\n");
 
-p1 = polyfit(temp, pressure, 8);
+p1 = polyfit(temp, pressure, 7);
 p2 = polyfit(temp, pressure, 4);
 
-printf("The value for polynomial of degree 8 for T=45 is: %f\n" , polyval(p1,45));
+printf("The value for polynomial of degree 7 for T=45 is: %f\n" , polyval(p1,45));
 printf("The approximation error for this polynomial is: %f\n" , abs(0.095848 - polyval(p1,45)));
 printf("\n\n");
 printf("The value for polynomial of degree 4 for T=45 is: %f\n" , polyval(p2,45));
@@ -63,7 +63,7 @@ x = 1:0.1:100;
 figure(2);
 hold on;
 plot(temp, pressure, "kx;interpolation points;");
-plot(x, polyval(p1,x), "r;P1 (degree 8 poly);");
+plot(x, polyval(p1,x), "r;P1 (degree 7 poly);");
 plot(x, polyval(p2,x), "g;P2 (degree 4 poly);");
 plot(temp, polyval(p1,temp), "bo;approximants for P1;")
 plot(temp, polyval(p2,temp), "yo;approximants for P2;")

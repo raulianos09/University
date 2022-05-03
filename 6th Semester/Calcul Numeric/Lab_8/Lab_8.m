@@ -59,9 +59,8 @@ f = @(x) (1 - (p/r)^2 .* sin(x)) .^ (1/2);
 H = @(n) (60*r) / (r^2 - p^2) * repeated_trapezium(0,2*pi,f,n);
 
 printf("Expected result is: 6.3131\n");
-printf("Approx with repeated trapezium formula for n = 100: %f\n", H(100));
-printf("Approx with repeated trapezium formula for n = 1000: %f\n", H(1000));
-printf("Approx with repeated trapezium formula for n = 100000: %f\n", H(100000));
+printf("Approx with repeated trapezium formula for n = 3: %f\n", H(3));
+printf("Approx with repeated trapezium formula for n = 30: %f\n", H(30));
 printf("\n");
 
 %%%---------------------------------------------------------------------%%%
@@ -89,7 +88,6 @@ eps = 0.001;
 
 n = 1;
 while n^2 < ((b-a)^3 * M2F) / (12 * eps)
-  printf("%f  %f\n", n^2,((b-a)^3 * M2F) / (12 * eps))
   n = n+1;
 endwhile  
 
@@ -125,7 +123,7 @@ clear;
 printf("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n");
 printf("Exercise 6\n");
 
-f = @(t) exp((-t).^2);
+f = @(t) exp(-t.^2);
 err = @(x,n) (2 / sqrt(pi)) * repeated_simpson(0,x,f,n);
 
 printf("Expected result is: 0.520499876\n");
