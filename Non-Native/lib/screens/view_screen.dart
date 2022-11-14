@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/model/item_model.dart';
 import 'package:flutter_app/utils/app_colors.dart';
-import 'package:flutter_app/widgets/button_widget.dart';
 import 'package:flutter_app/widgets/textfield_widget.dart';
 
-class AddScreen extends StatefulWidget {
-  const AddScreen({Key? key}) : super(key: key);
+class ViewScreen extends StatelessWidget {
 
-  @override
-  State<AddScreen> createState() => _AddScreenState();
-}
+  final ItemModel item;
+  const ViewScreen({Key? key, required this.item}) : super(key: key);
 
-class _AddScreenState extends State<AddScreen> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController idController = TextEditingController();
     TextEditingController nameController = TextEditingController();
     TextEditingController descriptionController = TextEditingController();
     TextEditingController priceController = TextEditingController();
     TextEditingController availableQuantityController = TextEditingController();
     TextEditingController imageController = TextEditingController();
+
+    idController.text= item.id.toString();
+    nameController.text = item.name;
+    descriptionController.text = item.description;
+    priceController.text = item.price.toString();
+    availableQuantityController.text = item.availableQuantity.toString();
+    imageController.text = item.imgURL??"";
+
+    
 
     return Scaffold(
       body: Container(
@@ -32,7 +39,9 @@ class _AddScreenState extends State<AddScreen> {
               ),
               IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    var nav = Navigator.of(context);
+                    nav.pop();
+                    nav.pop();
                   },
                   icon: const Icon(
                     Icons.arrow_back,
@@ -42,9 +51,13 @@ class _AddScreenState extends State<AddScreen> {
             Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: [TextFieldWidget(
+                      textController: idController, hintText: "Item ID",readOnly: true),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   TextFieldWidget(
-                      textController: nameController, hintText: "Item name"),
+                      textController: nameController, hintText: "Item name",readOnly: true),
                   const SizedBox(
                     height: 20,
                   ),
@@ -52,38 +65,28 @@ class _AddScreenState extends State<AddScreen> {
                       textController: descriptionController,
                       hintText: "Description",
                       maxLinesNr: 5,
-                      borderRadius: 15),
+                      borderRadius: 15,
+                      readOnly: true,),
                   const SizedBox(
                     height: 20,
                   ),
                   TextFieldWidget(
-                      textController: priceController, hintText: "Price"),
+                      textController: priceController, hintText: "Price",readOnly: true),
                   const SizedBox(
                     height: 20,
                   ),
                   TextFieldWidget(
                       textController: availableQuantityController,
-                      hintText: "Available Quantity"),
+                      hintText: "Available Quantity",readOnly: true),
                   const SizedBox(
                     height: 20,
                   ),
                   TextFieldWidget(
-                      textController: imageController, hintText: "Image URL"),
+                      textController: imageController, hintText: "Image URL",readOnly: true),
                   const SizedBox(
                     height: 120,
                   ),
-                  GestureDetector(
-                      onTap: () { 
-                        Navigator.pop(context,[nameController.text,descriptionController.text,
-                        double.parse(priceController.text),
-                        int.parse(availableQuantityController.text),
-                        imageController.text]);
-
-                      },
-                      child: const ButtonWidget(
-                          backgroundColor: AppColors.mainColor,
-                          text: "Add Item",
-                          textColor: Colors.white))
+                 
                 ])
           ])),
     );

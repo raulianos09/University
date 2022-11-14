@@ -15,7 +15,7 @@ final Color? color;
       height: MediaQuery.of(context).size.height/14,
       decoration: BoxDecoration(
         color: AppColors.textHolderColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(0),
       ),
       child:Center(
         child: Text(text, style: const TextStyle(

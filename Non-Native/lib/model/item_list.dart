@@ -32,9 +32,24 @@ void deleteItem(int id)
   myItems.removeWhere((element) => element.id == id);
 }
 
+void deleteByIndex(int index)
+{
+  myItems.removeAt(index);
+}
+
  int size() {
    return myItems.length;
  }
+
+void editItem(int id, String name, String description, double price, int availableQuantity, [String? imgURL]){
+  ItemModel itemToEdit = getById(id);
+  itemToEdit.name = name;
+  itemToEdit.description = name;
+  itemToEdit.price = price;
+  itemToEdit.availableQuantity = availableQuantity;
+  itemToEdit.imgURL = imgURL;
+  
+}
 
 
 }

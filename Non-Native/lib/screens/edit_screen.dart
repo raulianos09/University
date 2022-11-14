@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/model/item_model.dart';
 import 'package:flutter_app/utils/app_colors.dart';
 import 'package:flutter_app/widgets/button_widget.dart';
 import 'package:flutter_app/widgets/textfield_widget.dart';
 
-class AddScreen extends StatefulWidget {
-  const AddScreen({Key? key}) : super(key: key);
+class EditScreen extends StatelessWidget {
+  final ItemModel item;
 
-  @override
-  State<AddScreen> createState() => _AddScreenState();
-}
+  const EditScreen({Key? key, required this.item}) : super(key: key);
 
-class _AddScreenState extends State<AddScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController nameController = TextEditingController();
@@ -18,6 +16,12 @@ class _AddScreenState extends State<AddScreen> {
     TextEditingController priceController = TextEditingController();
     TextEditingController availableQuantityController = TextEditingController();
     TextEditingController imageController = TextEditingController();
+
+    nameController.text = item.name;
+    descriptionController.text = item.description;
+    priceController.text = item.price.toString();
+    availableQuantityController.text = item.availableQuantity.toString();
+    imageController.text = item.imgURL ?? "";
 
     return Scaffold(
       body: Container(
@@ -73,16 +77,26 @@ class _AddScreenState extends State<AddScreen> {
                     height: 120,
                   ),
                   GestureDetector(
-                      onTap: () { 
-                        Navigator.pop(context,[nameController.text,descriptionController.text,
-                        double.parse(priceController.text),
-                        int.parse(availableQuantityController.text),
-                        imageController.text]);
-
+                      onTap: () {
+                        var nav = Navigator.of(context);
+                        nav.pop([
+                          nameController.text,
+                          descriptionController.text,
+                          double.parse(priceController.text),
+                          int.parse(availableQuantityController.text),
+                          imageController.text
+                        ]);
+                        nav.pop([
+                          nameController.text,
+                          descriptionController.text,
+                          double.parse(priceController.text),
+                          int.parse(availableQuantityController.text),
+                          imageController.text
+                        ]);
                       },
                       child: const ButtonWidget(
                           backgroundColor: AppColors.mainColor,
-                          text: "Add Item",
+                          text: "Edit Item",
                           textColor: Colors.white))
                 ])
           ])),
