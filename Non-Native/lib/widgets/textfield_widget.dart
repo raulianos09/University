@@ -13,17 +13,29 @@ class TextFieldWidget extends StatelessWidget {
       {Key? key,
       required this.textController,
       required this.hintText,
-      this.borderRadius=15,
-      this.maxLinesNr=1, this.readOnly})
+      this.borderRadius = 15,
+      this.maxLinesNr = 1,
+      this.readOnly})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-        readOnly: readOnly??false,
+        readOnly: readOnly ?? false,
         maxLines: maxLinesNr,
         controller: textController,
         decoration: InputDecoration(
+            label: Text.rich(
+              TextSpan(
+                children: <InlineSpan>[
+                  WidgetSpan(
+                    child: Text(
+                      hintText,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             filled: true,
             fillColor: AppColors.textHolderColor,
             hintText: hintText,
