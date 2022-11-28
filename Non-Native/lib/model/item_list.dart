@@ -6,27 +6,20 @@ import 'package:flutter_app/model/item_model.dart';
 class ItemList {
   static List<ItemModel> myItems = [];
 
-  ItemList() {
-    var itm;
-    DatabaseHelper.getAllItems()
-        .then((value) => itm = value)
-        .whenComplete(() => myItems = itm);
+  ItemList(List<ItemModel> itms) {
+    myItems = itms;
   }
 
-  void populate() async {
-    DatabaseHelper.getAllItems().then((value) => {
-          for (var it in value!) {log(it.toString())},
-          myItems = value ?? []
-        });
-  }
-
-  void addItem(
+  Future<bool> addItem(
       String name, String description, double price, int availableQuantity,
-      [String? imgURL]) {
+      [String? imgURL]) async {
     ItemModel itm =
         ItemModel(null, name, description, price, availableQuantity, imgURL);
-    DatabaseHelper.addItem(itm).then((id) => myItems.add(
-        ItemModel(id, name, description, price, availableQuantity, imgURL)));
+
+    var id = await DatabaseHelper.addItem(itm);
+    myItems.add(
+        ItemModel(id, name, description, price, availableQuantity, imgURL));
+    return id != null;
   }
 
   List fetchAll() {

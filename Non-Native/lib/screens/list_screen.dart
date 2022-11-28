@@ -18,8 +18,21 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-  
-  ItemList items = ItemList();
+  late ItemList items;
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  void loadData() async {
+    List<ItemModel>? itms = await DatabaseHelper.getAllItems();
+    items = ItemList(itms??[]);
+    setState(() {
+      
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +64,10 @@ class _ListScreenState extends State<ListScreen> {
                   context,
                   MaterialPageRoute(builder: (context) => const AddScreen()),
                 );
-                setState(() {
-                  items.addItem(
+                bool res = await items.addItem(
                       result[0], result[1], result[2], result[3], result[4]);
+                setState((){
+                   items;
                 });
               },
               child: const Icon(Icons.add),
@@ -91,19 +105,25 @@ class _ListScreenState extends State<ListScreen> {
                                       children: [
                                         GestureDetector(
                                           onTap: () async {
-                                            final item = items.getByIndex(index);
+                                            final item =
+                                                items.getByIndex(index);
                                             final result = await Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                       EditScreen(item: item)),
+                                                      EditScreen(item: item)),
                                             );
 
                                             setState(() {
-                                              items.editItem(item.id!, result[0],result[1],result[2],result[3],result[4]);
+                                              items.editItem(
+                                                  item.id!,
+                                                  result[0],
+                                                  result[1],
+                                                  result[2],
+                                                  result[3],
+                                                  result[4]);
                                             });
                                           },
-
                                           child: const ButtonWidget(
                                               backgroundColor:
                                                   AppColors.mainColor,
@@ -119,7 +139,10 @@ class _ListScreenState extends State<ListScreen> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                       ViewScreen(item: items.getByIndex(index))),
+                                                      ViewScreen(
+                                                          item:
+                                                              items.getByIndex(
+                                                                  index))),
                                             );
                                           },
                                           child: const ButtonWidget(
@@ -130,7 +153,7 @@ class _ListScreenState extends State<ListScreen> {
                                         ),
                                       ]));
                             });
-                            
+
                         return false;
                       } //left to right
                       else {
@@ -162,7 +185,6 @@ class _ListScreenState extends State<ListScreen> {
                                         ),
                                       ]));
                             });
-                      
                       }
                     }),
                     key: ObjectKey(index),
