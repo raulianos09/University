@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/database/database_helper.dart';
 import 'package:flutter_app/model/item_list.dart';
+import 'package:flutter_app/model/item_model.dart';
 import 'package:flutter_app/screens/add_screen.dart';
 import 'package:flutter_app/screens/edit_screen.dart';
 import 'package:flutter_app/screens/view_screen.dart';
@@ -16,6 +18,7 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
+  
   ItemList items = ItemList();
 
   @override
@@ -97,7 +100,7 @@ class _ListScreenState extends State<ListScreen> {
                                             );
 
                                             setState(() {
-                                              items.editItem(item.id, result[0],result[1],result[2],result[3],result[4]);
+                                              items.editItem(item.id!, result[0],result[1],result[2],result[3],result[4]);
                                             });
                                           },
 
