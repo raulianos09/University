@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter_app/database/database_helper.dart';
+import 'package:flutter_app/database/server_helper.dart';
 import 'package:flutter_app/model/item_model.dart';
 
 class ItemList {
@@ -16,7 +17,11 @@ class ItemList {
     ItemModel itm =
         ItemModel(null, name, description, price, availableQuantity, imgURL);
 
-    var id = await DatabaseHelper.addItem(itm);
+    //add to local db
+    //var id = await DatabaseHelper.addItem(itm);
+    //add to server
+    var id = await ServerHelper.addItem(itm);
+    // add to inmemory repo
     myItems.add(
         ItemModel(id, name, description, price, availableQuantity, imgURL));
     return id != null;
@@ -37,7 +42,8 @@ class ItemList {
   void deleteItem(int id) {
     var itm = getById(id);
     myItems.removeWhere((element) => element.id == id);
-    DatabaseHelper.deleteItem(itm);
+    ServerHelper.deleteItem(itm);
+    //DatabaseHelper.deleteItem(itm);
   }
 
   void deleteByIndex(int index) {
@@ -53,10 +59,11 @@ class ItemList {
       [String? imgURL]) {
     ItemModel itemToEdit = getById(id);
     itemToEdit.name = name;
-    itemToEdit.description = name;
+    itemToEdit.description = description;
     itemToEdit.price = price;
     itemToEdit.availableQuantity = availableQuantity;
     itemToEdit.imgURL = imgURL;
-    DatabaseHelper.updateItem(itemToEdit);
+    //DatabaseHelper.updateItem(itemToEdit);
+    ServerHelper.updateItem(itemToEdit);
   }
 }

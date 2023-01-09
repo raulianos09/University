@@ -10,6 +10,8 @@ import 'package:flutter_app/widgets/button_widget.dart';
 import 'package:flutter_app/widgets/item_widget.dart';
 import 'package:get/get.dart';
 
+import '../database/server_helper.dart';
+
 class ListScreen extends StatefulWidget {
   const ListScreen({Key? key}) : super(key: key);
 
@@ -27,11 +29,11 @@ class _ListScreenState extends State<ListScreen> {
   }
 
   void loadData() async {
-    List<ItemModel>? itms = await DatabaseHelper.getAllItems();
-    items = ItemList(itms??[]);
-    setState(() {
-      
-    });
+    //List<ItemModel>? itms = await DatabaseHelper.getAllItems();
+    List<ItemModel>? itms = await ServerHelper.getAllItems();
+    items = ItemList(itms ?? []);
+
+    setState(() {});
   }
 
   @override
@@ -65,9 +67,9 @@ class _ListScreenState extends State<ListScreen> {
                   MaterialPageRoute(builder: (context) => const AddScreen()),
                 );
                 bool res = await items.addItem(
-                      result[0], result[1], result[2], result[3], result[4]);
-                setState((){
-                   items;
+                    result[0], result[1], result[2], result[3], result[4]);
+                setState(() {
+                  items;
                 });
               },
               child: const Icon(Icons.add),
