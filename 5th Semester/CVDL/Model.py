@@ -3,6 +3,10 @@ import numpy as np
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 import Utils
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, classification_report
 
 
 class Model(object):
@@ -12,9 +16,9 @@ class Model(object):
         self.model = tf.keras.models.Sequential([
             tf.keras.layers.Input((21 * 2,)),
             tf.keras.layers.Dropout(0.2),
-            tf.keras.layers.Dense(20, activation='relu'),
-            tf.keras.layers.Dropout(0.4),
-            tf.keras.layers.Dense(10, activation='relu'),
+            tf.keras.layers.Dense(100, activation='relu'),
+            tf.keras.layers.Dropout(0.2),
+            tf.keras.layers.Dense(50, activation='relu'),
             tf.keras.layers.Dense(self.NUM_CLASSES, activation='softmax')
         ])
         # Checkpoint callback
@@ -22,7 +26,8 @@ class Model(object):
         # Callback for early stopping
         self.es_callback = tf.keras.callbacks.EarlyStopping(patience=20, verbose=1)
         # define the optimizer, loss function and logged metrics for the model
-        self.model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+        self.model.compile(optimizer="adam", loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
 
     def train_model(self):
         # load trainng data
@@ -43,6 +48,22 @@ class Model(object):
         )
         # Save the weights of the model after training
         self.model.save(Utils.model_path, include_optimizer=False)
+
+        landmarks_test_predicted = []
+        for prediction in self.model.predict(landmarks_test):
+            landmarks_test_predicted.append(np.argmax(np.squeeze(prediction)))
+        self.print_confusion_matrix(tags_test, landmarks_test_predicted)
+
+    def print_confusion_matrix(self, y_true, y_pred):
+        labels = sorted(list(set(y_true)))
+        cmx_data = confusion_matrix(y_true, y_pred, labels=labels)
+
+        df_cmx = pd.DataFrame(cmx_data, index=labels, columns=labels)
+
+        fig, ax = plt.subplots(figsize=(7, 6))
+        sns.heatmap(df_cmx, annot=True, fmt='g', square=False)
+        ax.set_ylim(len(set(y_true)), 0)
+        plt.show()
 
     def summary(self):
         self.model.summary()

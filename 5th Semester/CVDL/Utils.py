@@ -1,8 +1,8 @@
-dataset = "D:\\CVDL\\Resources\\landmarks.csv"
-model_path = "D:\\CVDL\\Resources\\model.hdf5"
-tflite_path = "D:\\CVDL\\Resources\\model.tflite"
+dataset = "C:\\Users\\raul_\\Desktop\\University\\5th Semester\\CVDL\\Resources\\landmarks.csv"
+model_path = "C:\\Users\\raul_\\Desktop\\University\\5th Semester\\CVDL\\Resources\\model.hdf5"
+tflite_path = "C:\\Users\\raul_\\Desktop\\University\\5th Semester\\CVDL\\Resources\\model.tflite"
 IMAGES_PATH = "ProcessedDB/Train"
-INFERENCE_IMAGES_PATH = "D:\\CVDL\\Inference"
+INFERENCE_IMAGES_PATH = "C:\\Users\\raul_\\Desktop\\University\\5th Semester\\CVDL\\Inference"
 
 # Current recognized signs -
 # It is possible to add more signs by adding sample images with those signs to the training set

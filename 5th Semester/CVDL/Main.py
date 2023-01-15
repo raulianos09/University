@@ -13,7 +13,7 @@ if __name__ == "__main__":
   model = Model()
   inference = Inference()
 
-  # model.train_model()
+  #model.train_model()
 
   #Load images for inference
 
